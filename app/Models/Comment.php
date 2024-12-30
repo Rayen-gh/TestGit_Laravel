@@ -3,16 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Comment extends Model
 {
     //
-    public function user(): BelongsTo
+    public function user():BelongsTo
     {
-        $this->belongsTo(User::class);
+      return  $this->belongsTo(User::class);
     }
-    public function post(): BelongsTo
+    public function post():BelongsTo
     {
-        $this->belongsTo(Post::class);
+       return $this->belongsTo(Post::class);
     }
 }
